@@ -15,29 +15,25 @@
     messages = tabTempo;
   });
 
-  function envoyer(){
+  function envoyer() {
     console.log("envoi");
     ms.addMessage(new Message("dsd", "Philippe", "10:12:13", "Interro!!"));
   }
-
 </script>
 
 <main class="chatbox">
-    <button on:click="{envoyer}">Envoyer</button> <br>
+  <button on:click={envoyer}>Envoyer</button> <br />
   {#if messages != null}
     {#each messages as msg}
-      {msg.pseudo}  ({msg.time}) : "  {msg.contenu} <br/>
+      {msg.pseudo} ({msg.time}) : " {msg.contenu} <br />
     {/each}
   {/if}
 </main>
 
 <style>
-
   .chatbox {
     background-color: dimgrey;
     text-align: left;
-    width: 700px
+    width: 700px;
   }
-
-
 </style>
